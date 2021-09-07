@@ -27,6 +27,9 @@ stdincheck()
         read input
         if [ $input == "y" ]; then
             rm -f "/usr/bin/intercpp"
+            if [ command -v intercpp ]; then
+                rm -f "$0"
+            fi
             echo -e "${cBGreen}Uninstalled${cReset}"
             exit 0
         else
