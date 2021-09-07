@@ -21,5 +21,5 @@ for them
 
 3.) Run by: ```intercpp <c/c++ code>``` e.g ```intercpp project.cpp```
 
-#Uninstall
+# Uninstall
 Simply do: ```intercpp --uninstall```
