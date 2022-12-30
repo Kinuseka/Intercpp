@@ -22,6 +22,13 @@ regcommand="gcc"
 stdincheck() 
 {
     if [ "$this" == "--uninstall" ]; then
+        if [ "$EUID" -ne 0 ]
+            then echo "${cYellow}[Warning] There might be permission issues if not ran as sudo. Continue? [Y/n]${cReset}"
+            read -p 'Continue? [Y/n]' permask
+            if [ "$permask" == "n" ]
+                then exit
+            fi
+        fi
         echo -e "${cBRed}[Shell] Uninstall flag${cReset}" 
         printf "continue(y/n)?"
         read input
