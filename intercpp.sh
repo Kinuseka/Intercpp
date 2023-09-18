@@ -91,14 +91,14 @@ init()
     else
         echo -e "${cBRed}[Shell] Invalid extension${cReset}"
     fi
-    cd $HOME
+    cd "$HOME"
     if ! [ -d ".cache" ]; then
         mkdir ".cache"
     fi 
     if ! [ -d ".cache/intercpp" ]; then
         mkdir ".cache/intercpp"
     fi
-    cd $cwd
+    cd "$cwd"
 }
 
 removebinary()
@@ -118,7 +118,7 @@ openbinary()
 
 checkbinary() 
 {
-    cd $cwd
+    cd "$cwd"
     if [ -f "$exec_name" ]; then
       local output="$(mv -f "$exec_name" "$HOME/.cache/intercpp" 2>&1)"
       return 0
